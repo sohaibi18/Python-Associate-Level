@@ -1,0 +1,8 @@
+                                                    !^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!
+                                                    !                    WELCOME TO                    !
+                                                    !            LICENSE MANAGEMENT SYSTEM             !
+                                                    !^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!
+
+Id         FBO_Name        Father_Name     Contact_No      Premises_Address     License_Category     License_Fee     Issue_Date   Expire_Date  Add_By     Bank_Challan_No
+1          Sohaib          Siddique        03128823399     Peshawar             Industry             23444           2345         222333       imran      34444          
+2          imran           massiah         3444444         punjab               General Store        450000          3434343      434343       5555       233333         
