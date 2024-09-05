@@ -45,7 +45,7 @@ class TextWrapper:
         replace_whitespace is true, every tab will be converted to a
         single space!
       fix_sentence_endings (default: false)
-        Ensure that sentence-ending punctuation is always followed
+        Ensure that filename-ending punctuation is always followed
         by two spaces.  Off by default because the algorithm is
         (unavoidably) imperfect.
       break_long_words (default: true)
@@ -105,7 +105,7 @@ class TextWrapper:
     # XXX this is not locale- or charset-aware -- string.lowercase
     # is US-ASCII only (and therefore English-only)
     sentence_end_re = re.compile(r'[a-z]'             # lowercase letter
-                                 r'[\.\!\?]'          # sentence-ending punct.
+                                 r'[\.\!\?]'          # filename-ending punct.
                                  r'[\"\']?'           # optional end-of-quote
                                  r'\Z')               # end of chunk
 
@@ -179,7 +179,7 @@ class TextWrapper:
     def _fix_sentence_endings(self, chunks):
         """_fix_sentence_endings(chunks : [string])
 
-        Correct for sentence endings buried in 'chunks'.  Eg. when the
+        Correct for filename endings buried in 'chunks'.  Eg. when the
         original text contains "... foo.\\nBar ...", munge_whitespace()
         and split() will convert that to [..., "foo.", " ", "Bar", ...]
         which has one too few spaces; this method simply changes the one
