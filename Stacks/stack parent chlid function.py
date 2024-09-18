@@ -71,8 +71,38 @@
 
 
 # Queue Task
+# class QueueError(Exception):  # Choose base class for the new exception.
+#     """There is an error with the Queue."""
+#
+#
+# class Queue:
+#     def __init__(self):
+#         self.__queue = []
+#
+#     def put(self, elem):
+#         self.__queue.append(elem)
+#
+#     def get(self):
+#         if len(self.__queue) == 0:
+#             raise QueueError("Queue is empty")  # Raise the custom exception with a message
+#         return self.__queue.pop(0)  # Use pop(0) to get the first element from the queue
+#
+#
+# que = Queue()
+# que.put(1)
+# que.put("dog")
+# que.put(False)
+#
+# try:
+#     for i in range(4):  # Trying to get more elements than are in the queue
+#         print(que.get())
+# except QueueError as e:
+#     print(f"Queue error: {e}")
+
+# Queue Task 3.2.1.16 FIFO
+
 class QueueError(Exception):  # Choose base class for the new exception.
-    """Hello There is a error"""
+    pass
 
 
 class Queue:
@@ -84,16 +114,22 @@ class Queue:
 
     def get(self):
         if len(self.__queue) == 0:
-            raise QueueError
-        self.__queue.pop(0)
+            raise QueueError  # Raise the custom exception with a message
+        return self.__queue.pop(0)  # Use pop(0) to get the first element from the queue
+
+class SuperQueue(Queue):
+    def isempty(self):
+        return len(self._Queue__queue) == 0
 
 
-que = Queue()
+que = SuperQueue()
 que.put(1)
 que.put("dog")
 que.put(False)
-try:
-    for i in range(4):
+for i in range(4):
+    if not que.isempty():
         print(que.get())
-except:
-    print("Queue error")
+    else:
+        print("Queue empty")
+
+
